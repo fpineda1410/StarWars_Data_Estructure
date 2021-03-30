@@ -55,17 +55,17 @@ class User_Favorites(Base):
     protagonists_id = Column(Integer, ForeignKey('protagonists.id'))
     planets_id = Column (Integer, ForeignKey('planets.id'))
 
-class Share_Data(Base):
-    __tablename__ = 'share_data'
-    # Here we define columns for the table address.
-    # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('user.id'))
-    facebook_account=Column(String(250),nullable=True)
-    instagram_account=Column(String(250),nullable=False)
-    data_id=Column (Integer,ForeignKey('user_favorites.id'))
-    def to_dict(self):
-        return {}
+# class Share_Data(Base):
+#     __tablename__ = 'share_data'
+#     # Here we define columns for the table address.
+#     # Notice that each column is also a normal Python instance attribute.
+#     id = Column(Integer, primary_key=True)
+#     user_id = Column(Integer, ForeignKey('user.id'))
+#     facebook_account=Column(String(250),nullable=True)
+#     instagram_account=Column(String(250),nullable=False)
+#     data_id=Column (Integer,ForeignKey('user_favorites.id'))
+#     def to_dict(self):
+#         return {}
 
 ## Draw from SQLAlchemy base
 render_er(Base, 'diagram.png')
